@@ -19,6 +19,7 @@ RUN apt-get update && apt-get install -y \
     libtool \
     flex \
     bison \
+    bc \
     git \
     iptables \
     libssl-dev \
