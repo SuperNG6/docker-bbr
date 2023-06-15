@@ -2,16 +2,33 @@
 FROM debian:11 as build
 
 RUN apt-get update && apt-get install -y \
+    build-essential \
+    libmnl-dev \
+    libnuma-dev \
+    libcap-dev \
+    libaio-dev \
+    librdmacm-dev \
+    libnet1-dev \
+    libpcap0.8-dev \
     gcc \
     make \
     autoconf \
     automake \
     libtool \
     flex \
+    bison \
     git \
     iptables \
-    libnet1-dev \
-    libpcap0.8-dev 
+    libssl-dev \
+    zlib1g-dev \
+    libbz2-dev \
+    liblzma-dev \
+    libprotobuf-dev \
+    libncurses-dev \
+    libreadline-dev \
+    libsqlite3-dev \
+    libxml2-dev
+
 
 WORKDIR /usr/src
 RUN git clone https://github.com/lkl/linux.git
