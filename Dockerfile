@@ -3,6 +3,7 @@ FROM debian:11 as build
 
 RUN apt-get update && apt-get install -y \
     build-essential \
+    libfuse-dev libarchive-dev xfsprogs \
     libmnl-dev \
     libnuma-dev \
     libcap-dev \
