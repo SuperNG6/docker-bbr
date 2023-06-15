@@ -31,7 +31,6 @@ jobs:
           
       # 构建并推送 Docker 镜像
       - name: 构建 Docker 镜像
-        if: ${{ env.status == 'success' }}
         uses: docker/build-push-action@v2
         with:
           file: ./Dockerfile
