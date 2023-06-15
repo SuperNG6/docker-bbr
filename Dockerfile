@@ -36,7 +36,7 @@ COPY --from=build /usr/local/lib/liblkl.so /usr/local/lib/liblkl.so
 COPY --from=build /usr/local/lib/liblkl-hijack.so /usr/local/lib/liblkl-hijack.so
 
 # 设置 hijack 脚本和参数
-ENV LD_PRELOAD /usr/local/lib/liblkl-hijack.so
+ENV LD_PRELOAD="/usr/local/lib/liblkl-hijack.so"
 ENV LKL_HIJACK_NET_QDISC="root|fq"
 ENV LKL_HIJACK_SYSCTL="net.ipv4.tcp_congestion_control=bbr"
 ENV LKL_HIJACK_NET_IFTYPE="tap"
