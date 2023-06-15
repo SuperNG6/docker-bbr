@@ -3,6 +3,7 @@ FROM debian:11 as build
 
 RUN apt-get update && apt-get install -y \
     build-essential \
+    coreutils \
     libfuse-dev libarchive-dev xfsprogs \
     libmnl-dev \
     libnuma-dev \
