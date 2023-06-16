@@ -51,9 +51,9 @@ RUN apt-get update && apt-get install -y \
     rm -rf /var/lib/apt/lists/*
 
 # 从构建阶段复制 LKL
-COPY --from=build /usr/local/bin/lkl-hijack.sh /usr/local/bin/lkl-hijack.sh
-COPY --from=build /usr/local/lib/liblkl.so /usr/local/lib/liblkl.so
-COPY --from=build /usr/local/lib/liblkl-hijack.so /usr/local/lib/liblkl-hijack.so
+COPY --from=build /usr/src/linux/tools/lkl/bin/lkl-hijack.sh /usr/local/bin/lkl-hijack.sh
+COPY --from=build /usr/src/linux/tools/lkl/lib/ /usr/local/lib/liblkl.so
+COPY --from=build /usr/src/linux/tools/lkl/lib/hijack/liblkl-hijack.so /usr/local/lib/liblkl-hijack.so
 
 # 设置 hijack 脚本和参数
 ENV LD_PRELOAD="/usr/local/lib/liblkl-hijack.so"
