@@ -1,5 +1,5 @@
 # 第一阶段：构建阶段
-FROM debian:11 as build
+FROM debian:12 as build
 
 RUN apt-get update && apt-get install -y \
     build-essential \
@@ -40,7 +40,7 @@ WORKDIR /usr/src/linux/tools/lkl
 RUN make && make install
 
 # 第二阶段：运行阶段
-FROM debian:11-slim
+FROM debian:12-slim
 
 # 安装需要的依赖项，并清理 apt 缓存
 RUN apt-get update && apt-get install -y \
